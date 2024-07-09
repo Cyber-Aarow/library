@@ -1,3 +1,5 @@
+const myLibrary = [];
+
 function Book(title, author, pages, read){
     this.title = title;
     this.author = author;
@@ -11,4 +13,9 @@ function Book(title, author, pages, read){
         else string = string + "not read yet.";
         return string;
     }
+}
+
+function addBookToLibrary(title, author, pages, read){
+    let new_book = new Book(title, author, pages, read);
+    myLibrary.push(new_book);
 }
