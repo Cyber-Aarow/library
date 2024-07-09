@@ -30,26 +30,25 @@ addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
 let library = document.querySelector('#library');
 for(i=0; i<myLibrary.length; i++){
     let li = document.createElement('li');
-    let h4 = document.createElement('h4');
-    let div = document.createElement('div');
-    
-    h4.innerText = myLibrary[i].title;
-    li.appendChild(h4);
-    
-    div.innerText = myLibrary[i].author;
-    div.classList.add("author");
-    li.appendChild(div);
-    div.classList.remove("author");
+    let title = document.createElement('h4');
+    let author = document.createElement('div');
+    let pages = document.createElement('div');
+    let read = document.createElement('div');
 
-    div.innerText = myLibrary[i].pages;
-    div.classList.add("pages");
-    li.appendChild(div);
-    div.classList.remove("pages");
+    title.innerText = myLibrary[i].title;
+    li.appendChild(title);
+    
+    author.innerText = myLibrary[i].author;
+    author.classList.add("author");
+    li.appendChild(author);
 
-    div.innerText = myLibrary[i].read;
-    div.classList.add("read");
-    li.appendChild(div);
-    div.classList.remove("read");
+    pages.innerText = myLibrary[i].pages;
+    pages.classList.add("pages");
+    li.appendChild(pages);
+
+    read.innerText = myLibrary[i].read;
+    read.classList.add("read");
+    li.appendChild(read);
 
     library.appendChild(li);
 }
