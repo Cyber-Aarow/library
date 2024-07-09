@@ -20,8 +20,15 @@ function addBookToLibrary(title, author, pages, read){
     myLibrary.push(new_book);
 }
 
+
+//For Testing
+addBookToLibrary("LOTR", "Tolkien", 321, false);
+addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
+
+
+
 let library = document.querySelector('#library');
-for(i=0; i<library.length; i++){
+for(i=0; i<myLibrary.length; i++){
     let li = document.createElement('li');
     let h4 = document.createElement('h4');
     let div = document.createElement('div');
