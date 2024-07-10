@@ -7,6 +7,20 @@
     border: none;
 }
 
+#border {
+    background-color: rgba(8, 107, 199, 0.801);
+    padding: 80px 120px 80px 120px;
+    width: 100vw;
+    height: 100vh;
+}
+
+#inner {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    background-image: url(bookshelf2.jpg);
+}
+
 #library {
     display: grid;
     grid-auto-flow: column;
@@ -15,8 +29,7 @@
     margin: 20px;
     padding: 20px 20px 0 20px;
 
-    border: solid brown 5px;
-    background-color: burlywood;
+
 }
 
 .book {
