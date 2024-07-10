@@ -39,17 +39,22 @@ for(i=0; i<myLibrary.length; i++){
     title.classList.add("title");
     li.appendChild(title);
     
-    author.innerText = myLibrary[i].author;
+    author.innerText = "By " + myLibrary[i].author;
     author.classList.add("author");
     li.appendChild(author);
 
-    pages.innerText = myLibrary[i].pages;
+    pages.innerText = "Pages: " + myLibrary[i].pages;
     pages.classList.add("pages");
     li.appendChild(pages);
 
-    if(myLibrary[i].read) read.innerText = "Have Read"
-    else read.innerText = "Not Read";
-    read.classList.add("read");
+    if(myLibrary[i].read){
+        read.innerText = "Have Read";
+        read.classList.add("read")
+    }
+    else {
+        read.innerText = "Not Read";
+        read.classList.add("not-read");
+    }
     li.appendChild(read);
 
     li.classList.add("book");

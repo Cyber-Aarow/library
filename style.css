@@ -22,3 +22,11 @@
 .title, .author {
     text-orientation: sideways;
 }
+
+.read {
+    color: green;
+}
+
+.not-read {
+    color: red;
+}
