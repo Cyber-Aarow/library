@@ -36,6 +36,7 @@ for(i=0; i<myLibrary.length; i++){
     let read = document.createElement('div');
 
     title.innerText = myLibrary[i].title;
+    title.classList.add("title");
     li.appendChild(title);
     
     author.innerText = myLibrary[i].author;
@@ -46,7 +47,8 @@ for(i=0; i<myLibrary.length; i++){
     pages.classList.add("pages");
     li.appendChild(pages);
 
-    read.innerText = myLibrary[i].read;
+    if(myLibrary[i].read) read.innerText = "Have Read"
+    else read.innerText = "Not Read";
     read.classList.add("read");
     li.appendChild(read);
 
