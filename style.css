@@ -6,3 +6,15 @@
     list-style-type: none;
     border: none;
 }
+
+#library {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    gap: 10px;
+}
+
+.book {
+    border: black solid 3px;
+    width: 200px;
+}

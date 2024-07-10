@@ -50,5 +50,6 @@ for(i=0; i<myLibrary.length; i++){
     read.classList.add("read");
     li.appendChild(read);
 
+    li.classList.add("book");
     library.appendChild(li);
 }
