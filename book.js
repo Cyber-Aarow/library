@@ -34,19 +34,17 @@ for(i=0; i<myLibrary.length; i++){
     let author = document.createElement('div');
     let pages = document.createElement('div');
     let read = document.createElement('div');
+    let title_and_author = document.createElement('div');
 
     title.innerText = myLibrary[i].title;
     title.classList.add("title");
-    li.appendChild(title);
+    title_and_author.appendChild(title);
     
     author.innerText = "By " + myLibrary[i].author;
     author.classList.add("author");
-    li.appendChild(author);
+    title_and_author.appendChild(author);
 
-    pages.innerText = "Pages: " + myLibrary[i].pages;
-    pages.classList.add("pages");
-    li.appendChild(pages);
-
+    //"Read" check at top
     if(myLibrary[i].read){
         read.innerText = "Have Read";
         read.classList.add("read")
@@ -56,6 +54,15 @@ for(i=0; i<myLibrary.length; i++){
         read.classList.add("not-read");
     }
     li.appendChild(read);
+
+    //Then traditional book stuff
+    title_and_author.classList.add("title-and-author")
+    li.appendChild(title_and_author);
+
+    //Pages at bottom
+    pages.innerText = "Pages: " + myLibrary[i].pages;
+    pages.classList.add("pages");
+    li.appendChild(pages);
 
     li.classList.add("book");
     library.appendChild(li);
