@@ -33,13 +33,19 @@
 }
 
 .book {
+    display: grid;
     border: black solid 3px;
-    width: 200px;
+    width: 70px;
+    height: 200px;
     background-color: white;;
 }
 
 .title, .author {
-    text-orientation: sideways;
+    transform: rotate(7deg);
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
 }
 
 .read {
