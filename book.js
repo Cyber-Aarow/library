@@ -26,7 +26,7 @@ addBookToLibrary("LOTR", "Tolkien", 321, false);
 addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
 
 
-
+//Set up library
 let library = document.querySelector('#library');
 for(i=0; i<myLibrary.length; i++){
     let li = document.createElement('li');
@@ -67,3 +67,11 @@ for(i=0; i<myLibrary.length; i++){
     li.classList.add("book");
     library.appendChild(li);
 }
+
+//Button
+let button = querySelector('#new-book');
+let form = document.querySelector('#add-book-form');
+button.addEventListener('click', function(){
+    form.classList.toggle('hidden');
+    form.classList.toggle('revealed');
+});
