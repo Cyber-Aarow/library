@@ -75,7 +75,7 @@ showLibrary();
 
 
 //New Book Button
-let button = querySelector('#new-book');
+let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
 button.addEventListener('click', function(){
     form.classList.toggle('hide');
@@ -83,7 +83,7 @@ button.addEventListener('click', function(){
 });
 
 //Submit Form Button
-let submit = querySelector('#submit');
+let submit = querySelector('#submit-button');
 submit.addEventListener('submit', function(event){
     event.preventDefault();
 
