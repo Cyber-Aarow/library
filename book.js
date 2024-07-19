@@ -16,7 +16,7 @@ function Book(title, author, pages, read, showing){
     }
 }
 
-function addBookToLibrary(title, author, pages, read, showing){
+function addBookToLibrary(title, author, pages, read, showing=false){
     let new_book = new Book(title, author, pages, read, showing);
     myLibrary.push(new_book);
 }
@@ -68,8 +68,8 @@ function showLibrary(){
 }
 
 //For Testing
-addBookToLibrary("LOTR", "Tolkien", 321, false, false);
-addBookToLibrary("Warriors", "Eoin Colfer", 123, true, false);
+addBookToLibrary("LOTR", "Tolkien", 321, false);
+addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
 
 showLibrary();
 
