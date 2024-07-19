@@ -152,14 +152,18 @@ form label {
     font-size: xx-large;
     margin: 0 auto;
 }
-.hidden {
+
+.initially-hidden {
+    max-height: 0;
+}
+
+.hide {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out;
 }
 
-.revealed {
-    display: initial;
-    max-height: 500px;
+.reveal {
+    max-height: 450px;
     transition: max-height 0.5s ease-in;
 }
