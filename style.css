@@ -134,6 +134,7 @@ form input {
 
 form label {
     margin-top: 20px;
+    margin-bottom: 2px;
 }
 
 .read-check-label {
