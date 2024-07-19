@@ -113,6 +113,14 @@ h1 {
     background-color: white;
     width: 400px;
     height: 500px;
+    display: flex;
+}
+
+form input {
+    flex: 1 1 50%;
+    min-width: 200px;
+    border: solid black 3px;
+    padding: 5px;
 }
 
 .hidden {
