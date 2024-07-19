@@ -83,7 +83,7 @@ button.addEventListener('click', function(){
 });
 
 //Submit Form Button
-let submit = querySelector('#submit-button');
+let submit = document.querySelector('#submit-button');
 submit.addEventListener('submit', function(event){
     event.preventDefault();
 
