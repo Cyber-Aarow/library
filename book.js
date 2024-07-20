@@ -73,7 +73,6 @@ addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
 
 showLibrary();
 
-
 //New Book Button
 let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
@@ -83,7 +82,7 @@ button.addEventListener('click', function(){
 });
 
 //Submit Form Button
-let submit = document.querySelector('#submit-button');
+let submit = document.querySelector('#add-book-form');
 submit.addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -94,4 +93,8 @@ submit.addEventListener('submit', function(event){
 
     addBookToLibrary(new_title, new_author, new_pages, new_read);
     showLibrary();
+});
+
+submit.addEventListener('click', function(){
+    console.log("Submit button clicked.");
 });
