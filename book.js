@@ -89,7 +89,7 @@ submit.addEventListener('submit', function(event){
     const new_title = document.querySelector('#form-title').value;
     const new_author = document.querySelector('#form-author').value;
     const new_pages = document.querySelector('#form-pages').value;
-    const new_read = document.querySelector('#read-check').value;
+    const new_read = document.querySelector('#read-check').checked;
 
     addBookToLibrary(new_title, new_author, new_pages, new_read);
     showLibrary();
