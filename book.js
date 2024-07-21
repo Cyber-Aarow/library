@@ -80,6 +80,7 @@ let overlay = document.querySelector('.overlay');
 button.addEventListener('click', function(){
     overlay.classList.toggle('hidden');
     form.classList.toggle('hidden');
+    form.classList.toggle('showing');
     form.classList.toggle('reveal');
 });
 
