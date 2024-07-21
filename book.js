@@ -82,8 +82,8 @@ button.addEventListener('click', function(){
 });
 
 //Submit Form Button
-let submit = document.querySelector('#add-book-form');
-submit.addEventListener('submit', function(event){
+let popup = document.querySelector('.popup');
+form.addEventListener('submit', function(event){
     event.preventDefault();
 
     const new_title = document.querySelector('#form-title').value;
@@ -92,9 +92,7 @@ submit.addEventListener('submit', function(event){
     const new_read = document.querySelector('#read-check').checked;
 
     addBookToLibrary(new_title, new_author, new_pages, new_read);
+    form.classList.toggle('hidden');
+    popup.classList.toggle('hidden');
     showLibrary();
-});
-
-submit.addEventListener('click', function(){
-    console.log("Submit button clicked.");
 });
