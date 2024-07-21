@@ -31,7 +31,7 @@ h1 {
     font-size: x-large;
 }
 
-#new-book.button:hover {
+#new-book-button:hover {
     background-color:rgb(207, 197, 58);
 }
 
