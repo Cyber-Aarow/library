@@ -76,13 +76,14 @@ showLibrary();
 //New Book Button
 let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
+let overlay = document.querySelector('.popup');
 button.addEventListener('click', function(){
-    form.classList.toggle('hide');
+    overlay.classList.toggle('hidden');
+    form.classList.toggle('hidden');
     form.classList.toggle('reveal');
 });
 
 //Submit Form Button
-let popup = document.querySelector('.popup');
 form.addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -93,6 +94,6 @@ form.addEventListener('submit', function(event){
 
     addBookToLibrary(new_title, new_author, new_pages, new_read);
     form.classList.toggle('hidden');
-    popup.classList.toggle('hidden');
+    overlay.classList.toggle('hidden');
     showLibrary();
 });
