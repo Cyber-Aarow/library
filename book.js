@@ -76,7 +76,7 @@ showLibrary();
 //New Book Button
 let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
-let overlay = document.querySelector('.popup');
+let overlay = document.querySelector('.overlay');
 button.addEventListener('click', function(){
     overlay.classList.toggle('hidden');
     form.classList.toggle('hidden');
@@ -93,6 +93,7 @@ form.addEventListener('submit', function(event){
     const new_read = document.querySelector('#read-check').checked;
 
     addBookToLibrary(new_title, new_author, new_pages, new_read);
+    form.classList.toggle('showing');
     form.classList.toggle('hidden');
     overlay.classList.toggle('hidden');
     showLibrary();

@@ -95,7 +95,7 @@ h1 {
 
 
 /* Form */
-.popup {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -113,9 +113,6 @@ h1 {
     background-color: white;
     width: 400px;
     height: 450px;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .form-inputs {
@@ -155,7 +152,6 @@ form label {
 
 .hidden {
     display: none;
-    max-height: 0;
 }
 
 .hide {
@@ -168,4 +164,9 @@ form label {
     display: initial;
     max-height: 450px;
     transition: max-height 0.5s ease-in;
+}
+
+.showing {
+    display: flex;
+    flex-direction: column;
 }
