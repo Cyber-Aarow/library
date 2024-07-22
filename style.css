@@ -7,6 +7,15 @@
     border: none;
 }
 
+@font-face {
+    font-family: 'MarcellusSC-Regular';
+    src: url('fonts/marcellussc-regular-webfont.woff2') format('woff2'),
+         url('fonts/marcellussc-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #border {
     background-color: rgb(56, 30, 0);
     padding: 80px 120px 80px 120px;
@@ -21,6 +30,7 @@
 h1 {
     color: white;
     font-size: 50px;
+    font-family: "MarcellusSC-Regular", "Times New Roman", Georgia, Serif;
 }
 
 #new-book-button {
