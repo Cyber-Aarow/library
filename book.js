@@ -67,6 +67,12 @@ function showLibrary(){
     }
 }
 
+function hideForm(){
+    form.classList.toggle('showing');
+    form.classList.toggle('hidden');
+    overlay.classList.toggle('hidden');
+}
+
 //For Testing
 addBookToLibrary("LOTR", "Tolkien", 321, false);
 addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
@@ -84,7 +90,7 @@ button.addEventListener('click', function(){
     form.classList.toggle('reveal');
 });
 
-//Submit Form Button
+//Submit Form
 form.addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -94,8 +100,6 @@ form.addEventListener('submit', function(event){
     const new_read = document.querySelector('#read-check').checked;
 
     addBookToLibrary(new_title, new_author, new_pages, new_read);
-    form.classList.toggle('showing');
-    form.classList.toggle('hidden');
-    overlay.classList.toggle('hidden');
+    hideForm();
     showLibrary();
 });
