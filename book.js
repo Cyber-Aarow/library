@@ -103,3 +103,6 @@ form.addEventListener('submit', function(event){
     hideForm();
     showLibrary();
 });
+
+//Clicking on overlay closes form
+overlay.addEventListener('click', hideForm);
