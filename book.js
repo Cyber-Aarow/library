@@ -68,6 +68,7 @@ function showLibrary(){
 }
 
 function hideForm(){
+    form.reset();
     form.classList.toggle('showing');
     form.classList.toggle('hidden');
     overlay.classList.toggle('hidden');
