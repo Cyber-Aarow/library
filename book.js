@@ -72,6 +72,10 @@ function showLibrary(){
             let G = myLibrary[i].color[1];
             let B = myLibrary[i].color[2];
             li.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+            if(myLibrary[i].read) {
+                if(G >= 150) li.style.color = `rgb(${R}, 1, ${B})`;
+                else li.style.color = `rgb(${R}, 255, ${B})`;
+            }
             li.classList.add("book");
             library.appendChild(li);
             myLibrary[i].showing = true;
