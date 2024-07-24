@@ -116,17 +116,32 @@ h1 {
     width: 100%;
     height: 100%;
     background-color: rgba(7, 7, 7, 0.301);
+    pointer-events: none;
+    opacity: 0;
+    transition: 200ms ease-in-out;
 }
 
 #add-book-form {
     position: fixed;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
     border: 3px solid black;
     background-color: white;
     width: 400px;
     height: 450px;
+    max-width: 50%;
+    max-height: 60%;
+}
+
+.overlay.active {
+    pointer-events: all;
+    opacity: 1;
+}
+
+#add-book-form.active {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .form-inputs {
@@ -162,25 +177,4 @@ form label {
     height: 50px;
     font-size: xx-large;
     margin: 0 auto;
-}
-
-
-.hidden {
-    display: none;
-}
-
-.hide {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-}
-
-.reveal {
-    max-height: 450px;
-    transition: max-height 0.5s ease-in;
-}
-
-.showing {
-    display: flex;
-    flex-direction: column;
 }

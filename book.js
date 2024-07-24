@@ -69,9 +69,13 @@ function showLibrary(){
 
 function hideForm(){
     form.reset();
-    form.classList.toggle('showing');
-    form.classList.toggle('hidden');
-    overlay.classList.toggle('hidden');
+    form.classList.remove('active');
+    overlay.classList.remove('active');
+}
+
+function showForm(){
+    form.classList.add('active');
+    overlay.classList.add('active');
 }
 
 //For Testing
@@ -85,10 +89,7 @@ let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
 let overlay = document.querySelector('.overlay');
 button.addEventListener('click', function(){
-    overlay.classList.toggle('hidden');
-    form.classList.toggle('hidden');
-    form.classList.toggle('showing');
-    form.classList.toggle('reveal');
+    showForm();
 });
 
 //Submit Form
