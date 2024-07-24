@@ -8,8 +8,8 @@
     <script src="book.js" defer></script>
 </head>
 <body>
-    <div class="overlay"></div>
-    <form id="add-book-form">
+    <div class="overlay active"></div>
+    <form id="add-book-form" class="active">
         <h2>Add A Book</h2>
         <div class="form-inputs">
             <label for="form-title">Title</label>
@@ -25,7 +25,9 @@
             <label for="read-check" class="read-check-label">Have you read it?</label>
             <input type="checkbox" name="read-check" id="read-check" class="read-check">
         </div>
-        <button id="submit-button">Submit</button>
+        <div id="submit-div">
+            <button id="submit-button">Submit</button>
+        </div>
     </form>
     <div id="border">
         <div id="top">

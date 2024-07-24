@@ -133,6 +133,9 @@ h1 {
     height: 450px;
     max-width: 50%;
     max-height: 60%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .overlay.active {
@@ -172,9 +175,13 @@ form label {
     margin-bottom: 60px;
 }
 
+#submit-div {
+    display: flex;
+    justify-content: center;
+}
+
 #submit-button {
     width: 200px;
     height: 50px;
     font-size: xx-large;
-    margin: 0 auto;
 }
