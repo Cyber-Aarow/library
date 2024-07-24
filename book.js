@@ -6,6 +6,7 @@ function Book(title, author, pages, read, showing){
     this.pages = pages;
     this.read = read;
     this.showing = showing;
+    this.color = [36, 21, 3];
 
     this.info = function(){
         let string = title + " by " + author + ", " + pages
@@ -13,6 +14,13 @@ function Book(title, author, pages, read, showing){
         if(read) string = string + "read.";
         else string = string + "not read yet.";
         return string;
+    }
+
+    if(read) {
+        let R = Math.floor(Math.random() * 255);
+        let G = Math.floor(Math.random() * 255);
+        let B = Math.floor(Math.random() * 255);
+        this.color = [R, G, B];
     }
 }
 
@@ -60,6 +68,10 @@ function showLibrary(){
             pages.classList.add("pages");
             li.appendChild(pages);
 
+            let R = myLibrary[i].color[0];
+            let G = myLibrary[i].color[1];
+            let B = myLibrary[i].color[2];
+            li.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
             li.classList.add("book");
             library.appendChild(li);
             myLibrary[i].showing = true;
