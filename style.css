@@ -18,6 +18,8 @@
 
 #border {
     background-color: rgb(56, 30, 0);
+    background-image: url(darkwood.avif);
+    background-size: cover;
     padding: 80px 120px 80px 120px;
     width: 100vw;
     height: 100vh;
@@ -48,8 +50,9 @@ h1 {
 #inner {
     height: 100%;
     width: 100%;
-    background-color: white;
     background-color: rgba(224, 183, 127, 0.87);
+    background-image: url(wood.avif);
+    background-size: cover;
 }
 
 #library {
