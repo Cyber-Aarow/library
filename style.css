@@ -78,6 +78,10 @@ h1 {
     top: -21px;
 }
 
+#shelf2 {
+    top: 200px;
+}
+
 .book {
     display: flex;
     flex-direction: column;
