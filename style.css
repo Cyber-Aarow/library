@@ -104,6 +104,22 @@ h1 {
     z-index: 7;
 }
 
+.book-info {
+    height: 500px;
+    width: 400px;
+    background-color: white;
+    border: black solid 3px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-in-out;
+    z-index: 10;
+    padding: 100px 50px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
 .title-and-author {
     display: grid;
     grid-auto-flow: column;

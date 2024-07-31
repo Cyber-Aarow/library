@@ -10,7 +10,7 @@ function Book(title, author, pages, read, showing){
 
     this.info = function(){
         let string = title + " by " + author + ", " + pages
-            + "pages, ";
+            + " pages, ";
         if(read) string = string + "read.";
         else string = string + "not read yet.";
         return string;
@@ -77,6 +77,17 @@ function showLibrary(){
                 else li.style.color = `rgb(${R}, 255, ${B})`;
             }
             li.classList.add("book");
+
+            //Info
+            li.addEventListener("click", function(){
+                li.style.opacity = "0";
+                let bookInfo = document.querySelector('.book-info');
+                bookInfo.style.backgroundColor = li.style.backgroundColor;
+                bookInfo.style.color = li.style.color;
+                bookInfo.innerHTML = myLibrary[1].info();
+            });
+
+
             library.appendChild(li);
             myLibrary[i].showing = true;
         }
@@ -96,7 +107,7 @@ function showForm(){
 
 //For Testing
 addBookToLibrary("LOTR", "Tolkien", 321, false);
-addBookToLibrary("Warriors", "Eoin Colfer", 123, true);
+addBookToLibrary("Warriors", "Erin Hunter", 123, true);
 
 showLibrary();
 
