@@ -110,14 +110,18 @@ h1 {
     background-color: white;
     border: black solid 3px;
     position: fixed;
-    top: 50%;
+    top: 150%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: 200ms ease-in-out;
+    transition: transform 500ms ease-in-out;
     z-index: 10;
     padding: 100px 50px;
     font-size: xx-large;
     font-weight: bold;
+}
+
+.move-up {
+    transform: translate(-50%, -190%);
 }
 
 .title-and-author {

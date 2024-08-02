@@ -77,14 +77,15 @@ function showLibrary(){
                 else li.style.color = `rgb(${R}, 255, ${B})`;
             }
             li.classList.add("book");
-
-            //Info
+            const counter = i;
+            //Info ***PROBLEM HERE***
             li.addEventListener("click", function(){
                 li.style.opacity = "0";
                 let bookInfo = document.querySelector('.book-info');
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
                 bookInfo.style.color = li.style.color;
-                bookInfo.innerHTML = myLibrary[1].info();
+                bookInfo.classList.toggle("move-up");
+                bookInfo.innerHTML = myLibrary[counter].info();
             });
 
 
