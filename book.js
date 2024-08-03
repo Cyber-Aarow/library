@@ -7,9 +7,9 @@ let overlayForm = document.querySelector('#form-overlay');
 let bookInfo = document.querySelector('.book-info');
 let overlayInfo = document.querySelector('#info-overlay');
 
-function putBack(bookNumber){
-    let book = document.querySelector(`#_${bookNumber}`);
-    book.style.opacity = "1";
+function putBackBook(bookNumber){
+    let book = document.querySelector(`#b${bookNumber}`);
+    book.style.opacity = "1"; 
 }
 
 
@@ -92,17 +92,18 @@ function showLibrary(){
             li.classList.add("book");
             const counter = i;
             //Info
-            li.id = `_${counter}`;
+            li.id = `b${counter}`;
             li.addEventListener("click", function(){
                 li.style.opacity = "0";
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
                 bookInfo.style.color = li.style.color;
                 bookInfo.classList.toggle("move-up");
                 overlayInfo.classList.add("active");
-
+            
                 bookInfo.innerHTML = myLibrary[counter].info();
-                putBackBook = putBack(counter);
-                overlayInfo.addEventListener('click', putBackBook);
+                overlayInfo.addEventListener('click', function(){
+                    putBackBook(counter);
+                });
             });
 
 
