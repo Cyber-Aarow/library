@@ -1,4 +1,10 @@
+//Universal Variables
 const myLibrary = [];
+
+let button = document.querySelector('#new-book-button');
+let form = document.querySelector('#add-book-form');
+let overlayForm = document.querySelector('#form-overlay');
+let overlayInfo = document.querySelector('#info-overlay');
 
 function Book(title, author, pages, read, showing){
     this.title = title;
@@ -85,6 +91,7 @@ function showLibrary(){
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
                 bookInfo.style.color = li.style.color;
                 bookInfo.classList.toggle("move-up");
+                overlayInfo.classList.add("active");
                 bookInfo.innerHTML = myLibrary[counter].info();
             });
 
@@ -98,12 +105,12 @@ function showLibrary(){
 function hideForm(){
     form.reset();
     form.classList.remove('active');
-    overlay.classList.remove('active');
+    overlayForm.classList.remove('active');
 }
 
 function showForm(){
     form.classList.add('active');
-    overlay.classList.add('active');
+    overlayForm.classList.add('active');
 }
 
 //For Testing
@@ -111,14 +118,12 @@ addBookToLibrary("LOTR", "Tolkien", 321, false);
 addBookToLibrary("Warriors", "Erin Hunter", 123, true);
 
 showLibrary();
+ 
+
+
 
 //New Book Button
-let button = document.querySelector('#new-book-button');
-let form = document.querySelector('#add-book-form');
-let overlay = document.querySelector('.overlay');
-button.addEventListener('click', function(){
-    showForm();
-});
+button.addEventListener('click', showForm);
 
 //Submit Form
 form.addEventListener('submit', function(event){
@@ -134,5 +139,12 @@ form.addEventListener('submit', function(event){
     showLibrary();
 });
 
-//Clicking on overlay closes form
-overlay.addEventListener('click', hideForm);
+//Clicking on overlayForm closes form
+overlayForm.addEventListener('click', hideForm);
+
+//Clicking on overlayInfo puts book back on shelf
+overlayInfo.addEventListener('click', function(){
+    overlayInfo.classList.remove('active');
+    bookInfo.classList.toggle("move-up");
+    
+})
