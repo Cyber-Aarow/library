@@ -4,7 +4,14 @@ const myLibrary = [];
 let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
 let overlayForm = document.querySelector('#form-overlay');
+let bookInfo = document.querySelector('.book-info');
 let overlayInfo = document.querySelector('#info-overlay');
+
+function putBack(bookNumber){
+    let book = document.querySelector(`#_${bookNumber}`);
+    book.style.opacity = "1";
+}
+
 
 function Book(title, author, pages, read, showing){
     this.title = title;
@@ -84,15 +91,18 @@ function showLibrary(){
             }
             li.classList.add("book");
             const counter = i;
-            //Info ***PROBLEM HERE***
+            //Info
+            li.id = `_${counter}`;
             li.addEventListener("click", function(){
                 li.style.opacity = "0";
-                let bookInfo = document.querySelector('.book-info');
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
                 bookInfo.style.color = li.style.color;
                 bookInfo.classList.toggle("move-up");
                 overlayInfo.classList.add("active");
+
                 bookInfo.innerHTML = myLibrary[counter].info();
+                putBackBook = putBack(counter);
+                overlayInfo.addEventListener('click', putBackBook);
             });
 
 
@@ -145,6 +155,6 @@ overlayForm.addEventListener('click', hideForm);
 //Clicking on overlayInfo puts book back on shelf
 overlayInfo.addEventListener('click', function(){
     overlayInfo.classList.remove('active');
+    overlayInfo.removeEventListener('click', putBackBook);
     bookInfo.classList.toggle("move-up");
-    
 })
