@@ -59,9 +59,9 @@ h1 {
     display: grid;
     grid-auto-flow: column;
     justify-content: left;
-    gap: 3px;
+    gap: 1px;
     margin: 20px;
-    padding: 20px 20px 0 20px;
+    padding: 20px 15px 0;
 
 
 }
@@ -153,8 +153,7 @@ h1 {
     background-color: rgb(255, 170, 170);
 }
 
-
-/* Form */
+/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
@@ -168,6 +167,7 @@ h1 {
     z-index: 9;
 }
 
+/* Form */
 #add-book-form {
     position: fixed;
     left: 50%;

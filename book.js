@@ -127,6 +127,10 @@ function showForm(){
 //For Testing
 addBookToLibrary("LOTR", "Tolkien", 321, false);
 addBookToLibrary("Warriors", "Erin Hunter", 123, true);
+for(let i = 0; i < 17; i++) {
+    addBookToLibrary(i, i+2, i+20, true);
+}
+
 
 showLibrary();
  
