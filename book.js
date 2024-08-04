@@ -24,8 +24,8 @@ function Book(title, author, pages, read, showing){
     this.info = function(){
         let string = title + " by " + author + ", " + pages
             + " pages, ";
-        if(read) string = string + "read.";
-        else string = string + "not read yet.";
+        if(read) string = string + "finished reading.";
+        else string = string + "not finished yet.";
         return string;
     }
 
@@ -50,7 +50,7 @@ function showLibrary(){
             let title = document.createElement('h4');
             let author = document.createElement('div');
             let pages = document.createElement('div');
-            let read = document.createElement('div');
+            let remove = document.createElement('button');
             let title_and_author = document.createElement('div');
 
             title.innerText = myLibrary[i].title;
@@ -61,22 +61,16 @@ function showLibrary(){
             author.classList.add("author");
             title_and_author.appendChild(author);
 
-            //"Read" check at top
-            if(myLibrary[i].read){
-                read.innerText = "Have Read";
-                read.classList.add("read")
-            }
-            else {
-                read.innerText = "Not Read";
-                read.classList.add("not-read");
-            }
-            li.appendChild(read);
+            //X at top
+            remove.innerHTML = "X";
+            remove.classList.add('remove');
+            li.appendChild(remove);
 
             //Then traditional book stuff
             title_and_author.classList.add("title-and-author")
             li.appendChild(title_and_author);
 
-            //Pages at bottom
+            //Author at bottom
             pages.innerText = "Pages: " + myLibrary[i].pages;
             pages.classList.add("pages");
             li.appendChild(pages);
