@@ -47,33 +47,29 @@ function showLibrary(){
     for(i=0; i<myLibrary.length; i++){
         if(myLibrary[i].showing === false){
             let li = document.createElement('li');
+            let remove = document.createElement('button');
             let title = document.createElement('h4');
             let author = document.createElement('div');
-            let pages = document.createElement('div');
-            let remove = document.createElement('button');
+            
             let title_and_author = document.createElement('div');
 
             title.innerText = myLibrary[i].title;
             title.classList.add("title");
             title_and_author.appendChild(title);
             
-            author.innerText = "By " + myLibrary[i].author;
-            author.classList.add("author");
-            title_and_author.appendChild(author);
-
             //X at top
             remove.innerHTML = "X";
             remove.classList.add('remove');
             li.appendChild(remove);
 
-            //Then traditional book stuff
+            //Then sideways title
             title_and_author.classList.add("title-and-author")
             li.appendChild(title_and_author);
 
-            //Author at bottom
-            pages.innerText = "Pages: " + myLibrary[i].pages;
-            pages.classList.add("pages");
-            li.appendChild(pages);
+            //Author's last name at bottom
+            author.innerText = myLibrary[i].author;
+            author.classList.add("author");
+            li.appendChild(author);
 
             let R = myLibrary[i].color[0];
             let G = myLibrary[i].color[1];
@@ -120,7 +116,7 @@ function showForm(){
 }
 
 //For Testing
-addBookToLibrary("LOTR", "Tolkien", 321, false);
+addBookToLibrary("LOTR", "J.R.R. Tolkien", 321, false);
 addBookToLibrary("Warriors", "Erin Hunter", 123, true);
 for(let i = 0; i < 17; i++) {
     addBookToLibrary(i, i+2, i+20, true);

@@ -134,16 +134,17 @@ h1 {
     align-items: center;
     justify-content: center;
     white-space: normal;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     overflow: hidden;
 }
 
-.title, .author {
+.title {
     transform: rotate(7deg);
     -ms-transform: rotate(270deg);
     -moz-transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
     -o-transform: rotate(270deg);
+    font-size: x-large;
+    font-weight: bolder;
 }
 
 /*.read {
@@ -160,6 +161,10 @@ h1 {
     text-align: center;
     font-size: medium;
     font-weight: bold;
+}
+
+.author {
+    text-align: center;
 }
 
 /* Overlay */
