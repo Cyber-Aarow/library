@@ -97,6 +97,7 @@ function showLibrary(){
                 li.style.opacity = "0";
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
                 bookInfo.style.color = li.style.color;
+                if(myLibrary[counter].read == false) bookInfo.style.color = "goldenrod";
                 bookInfo.classList.toggle("move-up");
                 overlayInfo.classList.add("active");
             
