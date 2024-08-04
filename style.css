@@ -251,3 +251,7 @@ form label {
     height: 50px;
     font-size: xx-large;
 }
+
+.no-text-cursor {
+    cursor: default;
+}

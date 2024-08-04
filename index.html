@@ -8,7 +8,7 @@
     <script src="book.js" defer></script>
 </head>
 <body>
-    <div class="book-info">Test.</div>
+    <div class="book-info"></div>
     <div class="overlay" id="info-overlay"></div>
     <div class="overlay active" id="form-overlay"></div>
     <form id="add-book-form" class="active">
@@ -35,11 +35,11 @@
     </form>
     <div id="border">
         <div id="top">
-            <h1>My Library</h1>
+            <h1 class="no-text-cursor">My Library</h1>
             <button id="new-book-button">New Book</button>
         </div>
         <div id="inner">
-            <ul id="library"></ul>
+            <ul id="library" class="no-text-cursor"></ul>
             <div class="shelf" id="shelf1"></div>
             <div class="shelf" id="shelf2"></div>
         </div>
