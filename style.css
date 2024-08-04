@@ -161,6 +161,12 @@ h1 {
     text-align: center;
     font-size: medium;
     font-weight: bold;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.remove:hover {
+    opacity: 1;
 }
 
 .author {
