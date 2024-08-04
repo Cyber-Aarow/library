@@ -57,13 +57,16 @@ h1 {
 
 #library {
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: dense;
     justify-content: left;
     gap: 1px;
     margin: 20px;
     padding: 20px 15px 0;
-
-
+    height: 500px;
+    max-width: 1570px;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 32px;
 }
 
 .shelf {
@@ -71,15 +74,15 @@ h1 {
     height: 40px;
     background-image: url(img/darkwood.avif);
     background-size: cover;
-    position: relative;
+    position: absolute;
 }
 
 #shelf1 {
-    top: -21px;
+    top: 384px;
 }
 
 #shelf2 {
-    top: 200px;
+    top: 640px;
 }
 
 .book {
