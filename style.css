@@ -127,14 +127,13 @@ h1 {
     transform: translate(-50%, -222%);
 }
 
-.title-and-author {
-    display: grid;
-    grid-auto-flow: column;
-    flex-grow: 3;
+.title-container {
+    display: flex;
     align-items: center;
     justify-content: center;
     white-space: normal;
     overflow: hidden;
+    flex-grow: 10;
 }
 
 .title {
@@ -143,19 +142,10 @@ h1 {
     -moz-transform: rotate(270deg);
     -webkit-transform: rotate(270deg);
     -o-transform: rotate(270deg);
-    font-size: x-large;
+    font-size: large;
     font-weight: bolder;
+    text-align: center;
 }
-
-/*.read {
-    color: green;
-    background-color: rgb(140, 255, 140);
-}
-
-.not-read {
-    color: red;
-    background-color: rgb(255, 170, 170);
-}*/
 
 .remove {
     text-align: center;

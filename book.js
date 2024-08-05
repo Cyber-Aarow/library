@@ -48,23 +48,21 @@ function showLibrary(){
         if(myLibrary[i].showing === false){
             let li = document.createElement('li');
             let remove = document.createElement('button');
+            let titleContainer = document.createElement('div');
             let title = document.createElement('h4');
             let author = document.createElement('div');
-            
-            let title_and_author = document.createElement('div');
 
-            title.innerText = myLibrary[i].title;
-            title.classList.add("title");
-            title_and_author.appendChild(title);
-            
             //X at top
             remove.innerHTML = "X";
             remove.classList.add('remove');
             li.appendChild(remove);
 
-            //Then sideways title
-            title_and_author.classList.add("title-and-author")
-            li.appendChild(title_and_author);
+            //Then sideways title 
+            title.innerText = myLibrary[i].title;
+            title.classList.add("title");
+            titleContainer.appendChild(title);
+            titleContainer.classList.add("title-container");
+            li.appendChild(titleContainer);
 
             //Author's last name at bottom
             author.innerText = myLibrary[i].author;
@@ -116,7 +114,7 @@ function showForm(){
 }
 
 //For Testing
-addBookToLibrary("LOTR", "J.R.R. Tolkien", 321, false);
+addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 321, false);
 addBookToLibrary("Warriors", "Erin Hunter", 123, true);
 for(let i = 0; i < 17; i++) {
     addBookToLibrary(i, i+2, i+20, true);
