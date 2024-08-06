@@ -49,7 +49,7 @@ function showLibrary(){
             let li = document.createElement('li');
             let remove = document.createElement('button');
             let titleContainer = document.createElement('div');
-            let title = document.createElement('h4');
+            let title = document.createElement('p');
             let author = document.createElement('div');
 
             //X at top
