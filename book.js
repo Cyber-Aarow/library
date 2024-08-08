@@ -56,12 +56,13 @@ function showLibrary(){
             //X at top
             remove.innerHTML = "X";
             remove.classList.add('remove');
-            remove.addEventListener('click', function(){
+            remove.addEventListener('click', (event) => {
                 const half1 = myLibrary.slice(0, counter);
                 const half2 = myLibrary.slice(counter + 1);
                 myLibrary = half1.concat(half2);
                 library.removeChild(li);
                 showLibrary();
+                event.stopPropagation();
             });
             li.appendChild(remove);
 
