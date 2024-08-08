@@ -1,5 +1,5 @@
 //Universal Variables
-const myLibrary = [];
+let myLibrary = [];
 
 let button = document.querySelector('#new-book-button');
 let form = document.querySelector('#add-book-form');
@@ -45,6 +45,7 @@ function addBookToLibrary(title, author, pages, read, showing=false){
 function showLibrary(){
     let library = document.querySelector('#library');
     for(i=0; i<myLibrary.length; i++){
+        const counter = i; //To be used in event listeners
         if(myLibrary[i].showing === false){
             let li = document.createElement('li');
             let remove = document.createElement('button');
@@ -55,6 +56,13 @@ function showLibrary(){
             //X at top
             remove.innerHTML = "X";
             remove.classList.add('remove');
+            remove.addEventListener('click', function(){
+                const half1 = myLibrary.slice(0, counter);
+                const half2 = myLibrary.slice(counter + 1);
+                myLibrary = half1.concat(half2);
+                library.removeChild(li);
+                showLibrary();
+            });
             li.appendChild(remove);
 
             //Then sideways title 
@@ -78,7 +86,7 @@ function showLibrary(){
                 else li.style.color = `rgb(${R}, 255, ${B})`;
             }
             li.classList.add("book");
-            const counter = i;
+            
             //Info
             li.id = `b${counter}`;
             li.addEventListener("click", function(){
