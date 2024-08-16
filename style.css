@@ -9,8 +9,26 @@
 
 @font-face {
     font-family: 'MarcellusSC-Regular';
-    src: url('fonts/marcellussc-regular-webfont.woff2') format('woff2'),
-         url('fonts/marcellussc-regular-webfont.woff') format('woff');
+    src: url('fonts/marcellussc-regular-webfont.woff') format('woff'),
+         url('fonts/marcellussc-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Aquifer';
+    src: url('fonts/aquifer-webfont.woff') format('woff'),
+         url('fonts/aquifer-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SelfWrittenDemo';
+    src: url('fonts/selfwritten-regular-svg-webfont.woff') format('woff'),
+         url('fonts/selfwritten-regular-svg-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 
@@ -235,7 +253,7 @@ h1 {
     top: 50%;
     transform: translate(-50%, -50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 5px solid black;
+    /*border: 5px solid rgb(230, 206, 183);*/
     background-color: white;
     width: 400px;
     height: 450px;
@@ -246,20 +264,19 @@ h1 {
     display: flex;
     flex-direction: column;
 
-    border-top-left-radius: 20px;
+    
     border-top-right-radius: 20px;
     overflow: hidden;
 
-    background-image: url(img/book\ background.webp);
-    background-repeat: repeat;
-    background-size: 100px;
+    background-image: url(img/old\ paper\ background.jpg);
+    background-size: cover;
 }
 
 #top-of-form {
-    padding-left: 25px;
-    background-color: rgb(219, 84, 75);
+    padding: 25px 0 0 25px;
+    /*background-color: rgb(233, 167, 123);
     color: white;
-    border-bottom: 3px solid rgb(134, 8, 8);
+    border-bottom: 3px solid rgb(185, 141, 74);*/
 }
 
 .overlay.active {
@@ -280,14 +297,22 @@ h1 {
 form input {
     flex: 1 1 50%;
     max-width: 300px;
-    border: solid black 3px;
+    border: none;
     padding: 7px;
+    line-height: 1.2em;
+    padding-bottom: 0;
+    vertical-align:bottom;
     font-size: large;
+    background: none;
+    border-bottom: solid black 2px;
+    font-family: 'SelfWrittenDemo';
 }
 
 form label {
     margin-top: 20px;
     margin-bottom: 2px;
+    font-family: 'Aquifer';
+    font-size: 1.2em;
 }
 
 .read-check-label {
