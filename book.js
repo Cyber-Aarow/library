@@ -64,6 +64,7 @@ function showLibrary(){
             remove.addEventListener('click', (event) => {
                 if(myLibrary.length === 38){
                     button.classList.replace('deactivated-button', 'golden-button');
+                    button.addEventListener('click', showForm);
                 }
 
                 const half1 = myLibrary.slice(0, counter);

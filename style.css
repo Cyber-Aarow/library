@@ -349,12 +349,16 @@ form label {
 }
 
 .read-check-label {
-    margin-left: 30%;
+    margin-left: 20%;
 }
 
 .read-check {
     margin-left: 5px;
-    margin-bottom: 50px;
+    vertical-align:text-top;
+}
+
+#read-check-container {
+    margin-bottom: 40px;
 }
 
 #submit-div {
