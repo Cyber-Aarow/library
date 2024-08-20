@@ -60,9 +60,6 @@ h1 {
     align-self: center;
     font-size: x-large;
     font-family: "MarcellusSC-Regular", "Times New Roman", Georgia, Serif;
-    border: solid 2px;
-    border-color: rgb(47, 20, 13);
-    background-color: rgb(66, 32, 23);
 }
 
 /**/
@@ -116,6 +113,39 @@ h1 {
   }
 /**/
 
+.deactivated-button {
+    touch-action: manipulation;
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 600;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.3em;
+    height: 2.75em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+      inset 0 -2px 5px 1px rgb(59, 52, 45),
+      inset 0 -1px 1px 3px rgb(255, 251, 234);
+    background-image: linear-gradient(
+      160deg,
+      #333333,
+      #64625e,
+      #bbb9ac,
+      #64625e,
+      #333333
+    );
+    border: 1px solid #363636;
+    color: rgb(51, 50, 50);
+    text-shadow: 0 2px 2px rgb(204, 198, 172);
+    cursor: pointer;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
 #inner {
     height: 100%;
     width: 100%;
@@ -136,6 +166,9 @@ h1 {
     grid-template-columns: repeat(19, 1fr);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 32px;
+
+    grid-auto-rows: none;
+    overflow: hidden;
 }
 
 .shelf {

@@ -40,6 +40,11 @@ function Book(title, author, pages, read, showing){
 function addBookToLibrary(title, author, pages, read, showing=false){
     let new_book = new Book(title, author, pages, read, showing);
     myLibrary.push(new_book);
+
+    if(myLibrary.length === 38){
+        button.classList.replace('golden-button', 'deactivated-button');
+        button.removeEventListener('click', showForm);
+    }
 }
 
 function showLibrary(){
@@ -57,12 +62,17 @@ function showLibrary(){
             remove.innerHTML = "X";
             remove.classList.add('remove');
             remove.addEventListener('click', (event) => {
+                if(myLibrary.length === 38){
+                    button.classList.replace('deactivated-button', 'golden-button');
+                }
+
                 const half1 = myLibrary.slice(0, counter);
                 const half2 = myLibrary.slice(counter + 1);
                 myLibrary = half1.concat(half2);
                 library.removeChild(li);
                 showLibrary();
                 event.stopPropagation();
+
             });
             li.appendChild(remove);
 
@@ -125,7 +135,7 @@ function showForm(){
 //For Testing
 addBookToLibrary("The Lord of the Rings", "J.R.R. Tolkien", 321, false);
 addBookToLibrary("Warriors", "Erin Hunter", 123, true);
-for(let i = 0; i < 17; i++) {
+for(let i = 0; i < 35; i++) {
     addBookToLibrary(i, i+2, i+20, true);
 }
 
