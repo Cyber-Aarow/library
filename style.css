@@ -303,6 +303,8 @@ h1 {
 
     background-image: url(img/old\ paper\ background.jpg);
     background-size: cover;
+
+    font-family: 'Aquifer';
 }
 
 #top-of-form {
@@ -345,7 +347,6 @@ form input {
 form label {
     margin-top: 20px;
     margin-bottom: 2px;
-    font-family: 'Aquifer';
     font-size: 1.2em;
 }
 
@@ -354,12 +355,17 @@ form label {
     justify-content: center;
 }
 
-/*#submit-button {
+#submit-button {
+    margin-top: 25px;
     width: 200px;
     height: 50px;
-    font-size: xx-large;
-}*/
-#submit-button {
+    font-size: 0;
+    border: solid black 2px;
+    background-color: transparent;
+    opacity: 0.3;
+}
+
+#submit-button:hover {
     color: #0A9928;
     font-size: 2rem;
     font-weight: 700;
@@ -373,7 +379,7 @@ form label {
     -webkit-mask-size: 944px 604px;
     -webkit-mask-position: 13rem 6rem;
     mix-blend-mode: multiply;
-    margin-top: 25px;
+    opacity: 1;
 }
 
 .no-text-cursor {
