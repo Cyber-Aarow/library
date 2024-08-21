@@ -339,6 +339,7 @@ form input {
     background: none;
     border-bottom: solid black 2px;
     font-family: 'SelfWrittenDemo';
+    color: #0036ac;
 }
 
 form label {
@@ -346,19 +347,6 @@ form label {
     margin-bottom: 2px;
     font-family: 'Aquifer';
     font-size: 1.2em;
-}
-
-.read-check-label {
-    margin-left: 20%;
-}
-
-.read-check {
-    margin-left: 5px;
-    vertical-align:text-top; 
-}
-
-#read-check-container {
-    margin-bottom: 25px;
 }
 
 #submit-div {
@@ -385,8 +373,54 @@ form label {
     -webkit-mask-size: 944px 604px;
     -webkit-mask-position: 13rem 6rem;
     mix-blend-mode: multiply;
+    margin-top: 25px;
 }
 
 .no-text-cursor {
     cursor: default;
 }
+
+.checkbox-wrapper input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+  
+  .checkbox-wrapper *,
+  .checkbox-wrapper ::after,
+  .checkbox-wrapper ::before {
+    box-sizing: border-box;
+    user-select: none;
+  }
+  
+  .checkbox-wrapper {
+    align-self: center;
+    display: block;
+    overflow: hidden;
+  }
+  
+  .checkbox-wrapper .label {
+    cursor: pointer;
+  }
+  
+  .checkbox-wrapper .check {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .checkbox-wrapper .label svg {
+    vertical-align: middle;
+  }
+  
+  .checkbox-wrapper .path1 {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    transition: 0.5s stroke-dashoffset;
+    opacity: 1;
+  }
+  
+  .checkbox-wrapper .check:checked + label svg g path {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
