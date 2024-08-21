@@ -354,11 +354,11 @@ form label {
 
 .read-check {
     margin-left: 5px;
-    vertical-align:text-top;
+    vertical-align:text-top; 
 }
 
 #read-check-container {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 #submit-div {
@@ -366,10 +366,25 @@ form label {
     justify-content: center;
 }
 
-#submit-button {
+/*#submit-button {
     width: 200px;
     height: 50px;
     font-size: xx-large;
+}*/
+#submit-button {
+    color: #0A9928;
+    font-size: 2rem;
+    font-weight: 700;
+    border: 0.5rem solid #0A9928;
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-transform: uppercase;
+    border-radius: 1rem;
+    font-family: 'Courier';
+    -webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+    -webkit-mask-size: 944px 604px;
+    -webkit-mask-position: 13rem 6rem;
+    mix-blend-mode: multiply;
 }
 
 .no-text-cursor {
