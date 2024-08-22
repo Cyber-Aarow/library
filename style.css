@@ -169,7 +169,6 @@ h1 {
     row-gap: 32px;
 
     grid-auto-rows: none;
-    overflow: hidden;
 }
 
 .shelf {
@@ -216,6 +215,7 @@ h1 {
     overflow: hidden;
     display: flex;
     gap: 60px;
+    
 }
 
 .book {
