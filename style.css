@@ -41,6 +41,7 @@
     padding: 80px 120px 85px 120px;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 #top {
@@ -187,6 +188,34 @@ h1 {
 
 #shelf2 {
     top: 640px;
+}
+
+#potted-plant {
+    height: 400px;
+    width: auto;
+}
+
+#greek-bust {
+    height: 700px;
+    width: auto;
+}
+
+#blue-vase {
+    height: 400px;
+    width: auto;
+}
+
+#globe {
+    height: 500px;
+    width: auto;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#bottom-shelf {
+    overflow: hidden;
+    display: flex;
+    gap: 60px;
 }
 
 .book {
