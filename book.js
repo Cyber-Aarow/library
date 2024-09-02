@@ -58,6 +58,11 @@ function showLibrary(){
             let title = document.createElement('p');
             let author = document.createElement('div');
 
+            let readCheckForm = document.createElement('form');
+            let readCheck = document.createElement('input');
+            let readCheckLabel = document.createElement('label');
+            
+
             //X at top
             remove.innerHTML = "X";
             remove.classList.add('remove');
@@ -69,11 +74,10 @@ function showLibrary(){
 
                 const half1 = myLibrary.slice(0, counter);
                 const half2 = myLibrary.slice(counter + 1);
-                myLibrary = half1.concat(half2);
+                myLibrary = half1.concat(half2); //**PROBLEM HERE**
                 library.removeChild(li);
                 showLibrary();
                 event.stopPropagation();
-
             });
             li.appendChild(remove);
 
@@ -99,6 +103,18 @@ function showLibrary(){
             }
             li.classList.add("book");
             
+            //Read change button
+            readCheckForm.classList.add('read-check-form');
+            readCheck.type = 'checkbox';
+            readCheck.id = 'read-check-book';
+            readCheckLabel.innerHTML = 'Finished';
+            readCheckLabel.id = 'read-check-book-label';
+            readCheckLabel.for = 'read-check-book';
+            readCheckForm.appendChild(readCheck);
+            readCheckForm.appendChild(readCheckLabel);
+            li.appendChild(readCheckForm);
+
+
             //Info
             li.id = `b${counter}`;
             li.addEventListener("click", function(){

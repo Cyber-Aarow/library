@@ -219,6 +219,7 @@ h1 {
 }
 
 .book {
+    position: relative;
     display: flex;
     flex-direction: column;
     border: black solid 3px;
@@ -292,6 +293,34 @@ h1 {
 
 .author {
     text-align: center;
+    position: relative;
+}
+
+.read-check-form {
+    position: absolute;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 12px;
+    font-weight: bolder;
+    text-align: center;
+    background-color: white;
+    color: black;
+
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#read-check-book-label{
+    margin: 0;
 }
 
 /* Overlay */
