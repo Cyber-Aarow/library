@@ -34,6 +34,15 @@
 
 }
 
+@font-face {
+    font-family: 'Black Chancery';
+    src: url('fonts/blkchcry-webfont.woff') format('woff'),
+         url('fonts/blkchcry-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 #border {
     background-color: rgb(56, 30, 0);
     background-image: url(img/darkwood.avif);
@@ -233,6 +242,7 @@ h1 {
 
     z-index: 5;
     color: goldenrod;
+    
 }
 
 .book:hover {
@@ -296,7 +306,7 @@ h1 {
     position: relative;
 }
 
-.read-check-form {
+.book-read-check-form {
     position: absolute;
     font-size: 12px;
     display: flex;
@@ -306,10 +316,9 @@ h1 {
     bottom: 0;
     right: 0;
     left: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 2px 2px 2px;
+    border-radius: 2px;
 
-    margin-bottom: 12px;
     font-weight: bolder;
     text-align: center;
     background-color: white;
@@ -319,8 +328,16 @@ h1 {
     padding-bottom: 4px;
 }
 
-#read-check-book-label{
-    margin: 0;
+.book-read-check-label{
+    margin-top: 0;
+    margin-right: 10px;
+    margin-left: -6px;
+    font-family: 'Black Chancery';
+}
+
+.book-read-check {
+    position: relative;
+    vertical-align: middle;
 }
 
 /* Overlay */

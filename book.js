@@ -104,12 +104,17 @@ function showLibrary(){
             li.classList.add("book");
             
             //Read change button
-            readCheckForm.classList.add('read-check-form');
+            readCheckForm.classList.add('book-read-check-form');
+            readCheckForm.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
             readCheck.type = 'checkbox';
-            readCheck.id = 'read-check-book';
-            readCheckLabel.innerHTML = 'Finished';
-            readCheckLabel.id = 'read-check-book-label';
-            readCheckLabel.for = 'read-check-book';
+            readCheck.classList.add('book-read-check');
+            readCheck.id = `read-check-${counter}`;
+            readCheckLabel.innerHTML = 'Done';
+            readCheckLabel.classList.add('book-read-check-label');
+            readCheckLabel.id = `read-check-label-${counter}`;
+            readCheckLabel.for = `read-check-${counter}`;
             readCheckForm.appendChild(readCheck);
             readCheckForm.appendChild(readCheckLabel);
             li.appendChild(readCheckForm);
