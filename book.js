@@ -14,12 +14,14 @@ function putBackBook(bookNumber){
 
 
 function Book(title, author, pages, read, showing){
+    let defaultBrown = [36, 21, 3];
+
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
     this.showing = showing;
-    this.color = [36, 21, 3];
+    this.color = defaultBrown;
 
     this.info = function(){
         let string = title + " by " + author + ", " + pages
@@ -35,6 +37,7 @@ function Book(title, author, pages, read, showing){
         let B = Math.floor(Math.random() * 255);
         this.color = [R, G, B];
     }
+    else this.color = defaultBrown;
 }
 
 function addBookToLibrary(title, author, pages, read, showing=false){
@@ -115,6 +118,17 @@ function showLibrary(){
             readCheckLabel.classList.add('book-read-check-label');
             readCheckLabel.id = `read-check-label-${counter}`;
             readCheckLabel.for = `read-check-${counter}`;
+
+            readCheck.addEventListener('change', ()=>{
+                if(readCheck.checked === true){
+                    myLibrary[counter].read = true;
+                }
+                else{
+                    myLibrary[counter].read = false;
+                }
+                showLibrary();
+            });
+
             readCheckForm.appendChild(readCheck);
             readCheckForm.appendChild(readCheckLabel);
             li.appendChild(readCheckForm);
