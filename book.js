@@ -14,7 +14,7 @@ function putBackBook(bookNumber){
 
 
 function Book(title, author, pages, read, showing){
-    let defaultBrown = [36, 21, 3];
+    const defaultBrown = [36, 21, 3];
 
     this.title = title;
     this.author = author;
@@ -26,18 +26,28 @@ function Book(title, author, pages, read, showing){
     this.info = function(){
         let string = title + " by " + author + ", " + pages
             + " pages, ";
-        if(read) string = string + "finished reading.";
+        if(this.read) string = string + "finished reading.";
         else string = string + "not finished yet.";
         return string;
     }
-
-    if(read) {
+    
+    if(this.read) {
         let R = Math.floor(Math.random() * 255);
         let G = Math.floor(Math.random() * 255);
         let B = Math.floor(Math.random() * 255);
         this.color = [R, G, B];
     }
     else this.color = defaultBrown;
+}
+
+function setColor(Book){
+    if(Book.read){
+        let R = Math.floor(Math.random() * 255);
+        let G = Math.floor(Math.random() * 255);
+        let B = Math.floor(Math.random() * 255);
+        Book.color = [R, G, B];
+    }
+    else Book.color = Book.defaultBrown;
 }
 
 function addBookToLibrary(title, author, pages, read, showing=false){
@@ -126,7 +136,16 @@ function showLibrary(){
                 else{
                     myLibrary[counter].read = false;
                 }
-                showLibrary();
+                setColor(myLibrary[counter]);
+                let this_book = document.querySelector(`#b${counter}`);
+                let R = myLibrary[counter].color[0];
+                let G = myLibrary[counter].color[1];
+                let B = myLibrary[counter].color[2];
+             this_book.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+                if(myLibrary[counter].read) {
+                    if(G >= 150) this_book.style.color = `rgb(${R}, 1, ${B})`;
+                    else this_book.style.color = `rgb(${R}, 255, ${B})`;
+                }
             });
 
             readCheckForm.appendChild(readCheck);
