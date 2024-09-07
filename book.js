@@ -110,6 +110,7 @@ function showLibrary(){
                 event.stopPropagation();
             });
             readCheck.type = 'checkbox';
+            if(myLibrary[counter].read) readCheck.checked = true;
             readCheck.classList.add('book-read-check');
             readCheck.id = `read-check-${counter}`;
             readCheckLabel.innerHTML = 'Done';
