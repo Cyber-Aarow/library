@@ -326,6 +326,13 @@ h1 {
 
     padding-top: 4px;
     padding-bottom: 4px;
+
+    opacity: 0;
+    transition: 200ms ease-in-out;
+}
+
+.book-read-check-form:hover {
+    opacity: 1;
 }
 
 .book-read-check-label{
