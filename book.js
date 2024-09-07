@@ -116,7 +116,7 @@ function showLibrary(){
             readCheckLabel.innerHTML = 'Done';
             readCheckLabel.classList.add('book-read-check-label');
             readCheckLabel.id = `read-check-label-${counter}`;
-            readCheckLabel.for = `read-check-${counter}`;
+            readCheckLabel.htmlFor = `read-check-${counter}`;
 
             readCheck.addEventListener('change', ()=>{
                 let R;
