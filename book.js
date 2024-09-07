@@ -12,10 +12,8 @@ function putBackBook(bookNumber){
     book.style.opacity = "1"; 
 }
 
-
+const defaultBrown = [36, 21, 3];
 function Book(title, author, pages, read, showing){
-    const defaultBrown = [36, 21, 3];
-
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -38,16 +36,6 @@ function Book(title, author, pages, read, showing){
         this.color = [R, G, B];
     }
     else this.color = defaultBrown;
-}
-
-function setColor(Book){
-    if(Book.read){
-        let R = Math.floor(Math.random() * 255);
-        let G = Math.floor(Math.random() * 255);
-        let B = Math.floor(Math.random() * 255);
-        Book.color = [R, G, B];
-    }
-    else Book.color = Book.defaultBrown;
 }
 
 function addBookToLibrary(title, author, pages, read, showing=false){
@@ -130,22 +118,34 @@ function showLibrary(){
             readCheckLabel.for = `read-check-${counter}`;
 
             readCheck.addEventListener('change', ()=>{
-                if(readCheck.checked === true){
+                let R;
+                let G;
+                let B;
+                const this_book = document.querySelector(`#b${counter}`);
+
+                if(readCheck.checked){
+                    //For info
                     myLibrary[counter].read = true;
-                }
-                else{
-                    myLibrary[counter].read = false;
-                }
-                setColor(myLibrary[counter]);
-                let this_book = document.querySelector(`#b${counter}`);
-                let R = myLibrary[counter].color[0];
-                let G = myLibrary[counter].color[1];
-                let B = myLibrary[counter].color[2];
-             this_book.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
-                if(myLibrary[counter].read) {
+                    //For background
+                    R = Math.floor(Math.random() * 255);
+                    G = Math.floor(Math.random() * 255);
+                    B = Math.floor(Math.random() * 255);
+                    //For text
                     if(G >= 150) this_book.style.color = `rgb(${R}, 1, ${B})`;
                     else this_book.style.color = `rgb(${R}, 255, ${B})`;
                 }
+                else{
+                    //For info
+                    myLibrary[counter].read = false;
+                    //For background
+                    R = defaultBrown[0];
+                    G = defaultBrown[1];
+                    B = defaultBrown[2];
+                    //For text
+                    this_book.style.color = 'goldenrod';
+                }
+                myLibrary[counter].color = [R, G, B];
+                this_book.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
             });
 
             readCheckForm.appendChild(readCheck);
