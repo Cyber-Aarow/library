@@ -8,7 +8,7 @@ let bookInfo = document.querySelector('.book-info');
 let overlayInfo = document.querySelector('#info-overlay');
 
 function putBackBook(bookNumber){
-    let book = document.querySelector(`#b${bookNumber}`);
+    let book = document.querySelector(`.b${bookNumber}`);
     book.style.opacity = "1"; 
 }
 
@@ -77,7 +77,6 @@ function showLibrary(){
                 const half2 = myLibrary.slice(counter + 1);
                 myLibrary = half1.concat(half2); //**PROBLEM HERE**
                 library.removeChild(li);
-                showLibrary();
                 event.stopPropagation();
             });
             li.appendChild(remove);
@@ -122,7 +121,7 @@ function showLibrary(){
                 let R;
                 let G;
                 let B;
-                const this_book = document.querySelector(`#b${counter}`);
+                const this_book = document.querySelector(`.b${counter}`);
 
                 if(readCheck.checked){
                     //For info
@@ -155,7 +154,7 @@ function showLibrary(){
 
 
             //Info
-            li.id = `b${counter}`;
+            li.classList.add(`b${counter}`);
             li.addEventListener("click", function(){
                 li.style.opacity = "0";
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
