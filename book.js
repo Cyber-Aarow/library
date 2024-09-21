@@ -77,6 +77,15 @@ function showLibrary(){
                 const half2 = myLibrary.slice(counter + 1);
                 myLibrary = half1.concat(half2); //**PROBLEM HERE**
                 library.removeChild(li);
+                for(let i = counter + 1; i < myLibrary.length + 1; i++){
+                    const selected_book = document.querySelector(`.b${i}`);
+                    selected_book.classList.add(`b${i - 1}`);
+                    selected_book.classList.remove(`b${i}`);
+                    
+                    selected_book.removeEventListener("click", bUI);
+                    selected_book.addEventListener('click', function(){
+                    });
+                }
                 event.stopPropagation();
             });
             li.appendChild(remove);
@@ -155,20 +164,25 @@ function showLibrary(){
 
             //Info
             li.classList.add(`b${counter}`);
-            li.addEventListener("click", function(){
+
+            function bringUpInfo(indexNum){
                 li.style.opacity = "0";
                 bookInfo.style.backgroundColor = li.style.backgroundColor;
                 bookInfo.style.color = li.style.color;
-                if(myLibrary[counter].read == false) bookInfo.style.color = "goldenrod";
+                if(myLibrary[indexNum].read == false) bookInfo.style.color = "goldenrod";
                 bookInfo.classList.toggle("move-up");
                 overlayInfo.classList.add("active");
             
-                bookInfo.innerHTML = myLibrary[counter].info();
+                bookInfo.innerHTML = myLibrary[indexNum].info();
                 overlayInfo.addEventListener('click', function(){
-                    putBackBook(counter);
+                    putBackBook(indexNum);
                 });
-            });
+            }
 
+            function bUI(){
+                bringUpInfo(counter);
+            }
+            li.addEventListener("click", bUI);
 
             library.appendChild(li);
             myLibrary[i].showing = true;
